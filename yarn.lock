@@ -383,6 +383,11 @@
     redux-thunk "^3.1.0"
     reselect "^5.1.0"
 
+"@rollup/rollup-win32-x64-msvc@^4.30.1", "@rollup/rollup-win32-x64-msvc@4.30.1":
+  version "4.30.1"
+  resolved "https://registry.npmjs.org/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.30.1.tgz"
+  integrity sha512-D6qjsXGcvhTjv0kI4fU8tUuBDF/Ueee4SVX79VfNDXZa64TfCW1Slkb6Z7O1p7vflqZjcmOVdZlqf8gvJxc6og==
+
 "@sinclair/typebox@^0.27.8":
   version "0.27.8"
   resolved "https://registry.npmjs.org/@sinclair/typebox/-/typebox-0.27.8.tgz"

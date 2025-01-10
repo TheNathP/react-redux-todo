@@ -32,7 +32,14 @@ export interface Product {
   quantity?: number;
 }
 // Product Slice
-export const fetchProducts = () => { }
+export const fetchProducts = createAsyncThunk(
+  "products/fetchProducts",
+  async (page:number) => {
+    const response = await fetch(`https://dummyjson.com/products?limit=10&skip=${(page - 1) * 10}`);
+    const data = await response.json();
+    return data.products;
+  }
+)
 
 const initialState: {
   items: Product[];
@@ -48,12 +55,24 @@ const productSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
-    setPage: (state, action) => {
+    setPage(state, action) {
+      state.currentPage = action.payload;
     },
   },
   extraReducers: (builder) => {
-
+    builder
+      .addCase(fetchProducts.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchProducts.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.items = action.payload;
+      })
+      .addCase(fetchProducts.rejected, (state) => {
+        state.isLoading = false;
+      });
   },
+  
 });
 
 export const { setPage } = productSlice.actions;
