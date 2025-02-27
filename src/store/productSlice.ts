@@ -31,7 +31,7 @@ export interface Product {
   price: number;
   quantity?: number;
 }
-// Product Slice
+
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async (page:number) => {

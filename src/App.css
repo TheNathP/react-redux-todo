@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Stereonic';
+    src: url('./assets/font/Stereonic-XS.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url('./assets/font/Jost-VariableFont_wght.ttf') format('truetype');
+}
+
+.hide-cursor {
+    cursor: none;
+}
+  
